@@ -1,1 +1,33 @@
-<p>hello world!</p>
+import pandas as pd 
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+#2 load the iris dataset
+iris=load_iris()
+df=pd.DataFrame(data=iris.data,columns=iris.frame_name)
+df['species']=iris.traget
+df['species']=df['species'],map({i:species for i,species in enumerate(iris.traget_name)})
+#3 preview the data
+print("first 5 rows to datasets:")
+display(df,head())
+#dataset summary
+print('\n dataset Info')
+df.info()
+print("\n summary statistics:")
+display(df.describe())
+#5 visilalization 
+sns.pairplot(df,hue="species")
+plt.subtitle("pairplot of Iris Features by Species",y=1.02)
+plt.show()
+#6 correlation heatmap
+plt.figure(figsize=(8,6))
+sns.heatmap(df,iloc[1,-1],corr(),anaot=True,amp='coolwarm')
+plt.title("correlaation Matrix")
+plt.show()
+#boxplots for each feature
+for features in iris :
+ plt.figure(figsize=(8,6))
+ sns.boxplot(x='species',y=features,data=df)
+ plt.title(f"{features()}by species")
+ plt.show()
+
