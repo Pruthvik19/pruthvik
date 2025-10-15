@@ -1,1 +1,1 @@
-# pruthvik
+# Pruthvik Avadhani
